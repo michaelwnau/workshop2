@@ -2,7 +2,7 @@ version: "3.8"
 services:
   web:
     build: ./app
-    image: YOUR_REPO_HERE:workshop2_web
+    image: 103427713563.dkr.ecr.us-east-1.amazonaws.com/workshop2:workshop2_web
     command: gunicorn nc_tutorials.wsgi:application --bind 0.0.0.0:8000
     volumes:
       - ./app/:/usr/src/app/
@@ -16,7 +16,7 @@ services:
       - DB_HOST=nctutorials.c5qniglhkme8.us-east-1.rds.amazonaws.com
       - DB_PORT=5432
       - DATABASE=postgres
-      - VIRTUAL_HOST=103427713563.dkr.ecr.us-east-1.amazonaws.com/workshop2:workshop2_web
+      - VIRTUAL_HOST=ec2-54-237-45-27.compute-1.amazonaws.com
       - VIRTUAL_PORT=8000
   nginx:
     build: ./nginx
